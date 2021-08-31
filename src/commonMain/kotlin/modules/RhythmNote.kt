@@ -25,7 +25,7 @@ class RhythmNote(private val view: View, input: Input, private var hp: Double) {
      * @param y just y
      * @return Boolean? (null mean no effect, True mean up HP, False mean down HP)
      */
-    private fun setNotePosition(position: Short, y: Int = 320): Boolean? {
+    private fun setNotePosition(position: Short, y: Int = 520): Boolean? {
         note.y = (y).toDouble()
         val position2 = position.toInt()
         note.visible = position2 != 8

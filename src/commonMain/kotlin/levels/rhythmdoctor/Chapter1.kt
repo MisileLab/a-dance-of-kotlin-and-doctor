@@ -8,20 +8,21 @@ import modules.makeshortlist
 
 class Chapter1 {
     suspend fun level1(note: RhythmNote) { // Samurai Techno
-        val list1: MutableList<Short> = makeshortlist(listOf(1, 2, 3, 4, 5, 6, 7))
-        val beat1 = 0.27F
-        val beat2 = 0.21F
+        val list1: MutableList<Short> = makeshortlist(listOf(1, 2, 3, 4, 5, 6, 7, 8))
+        val beat1 = 0.275F
+        val beat2 = 0.20F
         val music = resourcesVfs["musics/rhythmdoctor/samurai techno.mp3"].readMusic()
         music.play()
-        delay(1000L * 9L)
+        delay(9900L)
         note.listnoteposition(list1, 3, beat1)
         note.listnoteposition(list1, 2, beat2)
         note.listnoteposition(list1, 3, beat1)
-        note.listnoteposition(list1, 2, beat1)
-        note.listnoteposition(list1, 29, beat2)
-        delay(1L * 1000L)
+        note.listnoteposition(list1, 2, beat2)
+        delay(150L)
+        note.listnoteposition(list1, 30, beat2)
+        delay(1100L)
         note.listnoteposition(list1, 3, beat2)
-        delay(3L * 1000L)
+        delay(3200L)
         note.listnoteposition(list1, 1, beat2)
     }
 }

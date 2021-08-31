@@ -5,7 +5,6 @@ plugins {
 }
 
 buildscript {
-
     repositories {
         mavenLocal()
         mavenCentral()
@@ -23,8 +22,11 @@ apply<com.soywiz.korge.gradle.KorgeGradlePlugin>()
 
 korge {
     id = "com.misilelab.projects1.games.adokad"
+    name = "a dance of kotlin and doctor"
+    icon = File("logo.png")
+    targetJs()
     targetJvm()
-    targetDesktop()
+    targetAndroid()
     targetIos()
-    targetAndroidIndirect() // targetAndroidDirect()
+    targetDesktop()
 }
