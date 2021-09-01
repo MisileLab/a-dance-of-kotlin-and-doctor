@@ -12,7 +12,7 @@ class Adokad {
     /*
     Main Game
      */
-    suspend fun start() = Korge(width = 1920, height = 1080, bgcolor = Colors["#D3D3D3"]) {
+    suspend fun start() = Korge(width = 1920, height = 1080, bgcolor = Colors["#D3D3D3"], title="title", iconPath="logo.png") {
         val doctor: View = resourcesVfs["myTree.ktree"].readKTree(views)
         val input = views.input
         addChild(doctor)
