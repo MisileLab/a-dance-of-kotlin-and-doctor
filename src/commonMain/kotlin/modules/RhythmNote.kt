@@ -19,6 +19,7 @@ class RhythmNote(private val view: View, input: Input, private var hp: Double) {
     private val defaulthp = hp
     private val note: QView = view["note"]
     private val keys = input.keys
+
     /**
      * Set Note Position
      * @param position limit = 1~8 (8 is invisible note and no position) (position 1 not mean x=1)
@@ -27,7 +28,10 @@ class RhythmNote(private val view: View, input: Input, private var hp: Double) {
      */
     private fun setNotePosition(position: Short, y: Int = 520): Boolean? {
         note.y = (y).toDouble()
-        val position2 = position.toInt()
+        var position2 = position.toInt()
+        if (position2 > 8) {
+            position2 = 8
+        }
         note.visible = position2 != 8
         if (position2 == 1) {
             note.x = positionone
@@ -50,6 +54,19 @@ class RhythmNote(private val view: View, input: Input, private var hp: Double) {
         if (position2 == 7) {
             note.x = positionseven
         }
+        if (hp > 80) {
+            view["heart1"].visible = true
+            view["heart2"].visible = false
+            view["heart3"].visible = false
+        } else if ((hp <= 80) && (hp >= 50)) {
+            view["heart1"].visible = false
+            view["heart2"].visible = true
+            view["heart3"].visible = false
+        } else {
+            view["heart1"].visible = false
+            view["heart2"].visible = false
+            view["heart3"].visible = true
+        }
         var a: Boolean? = null
         val notcomplex = position2 == 7 && !keys.pressing(Key.SPACE)
         val notcomplex2 = position2 != 7 && keys.pressing(Key.SPACE)
@@ -60,22 +77,38 @@ class RhythmNote(private val view: View, input: Input, private var hp: Double) {
         }
         return a
     }
+
     /**
-     * note position with list and control hp, refresh hp
-     * @param list Note Position list
+     * note position with list and control hp
+     * @param positionlist Note Position list
      * @param repeat How many repeat
      * @param cooltime cooltime in each note
      */
-    suspend fun listnoteposition(list: List<Short>, repeat: Long, cooltime: Float) {
+    suspend fun listnoteposition(positionlist: List<Short>, repeat: Long, cooltime: Float) {
         val cooltime2: Long = (cooltime * 1000F).toLong()
         for (_i2 in 1..repeat)
-            for (i in list) {
-
+            for (i in positionlist) {
                 val a = setNotePosition(i)
                 controlhp(a)
                 refreshHP()
                 delay(cooltime2)
             }
+    }
+
+    /**
+     * note position with list and control hp but have cooltime list
+     */
+    suspend fun listnotepositioncooltime(positionlist: List<Short>, repeat: Long, cooltime: List<Float>) {
+        var count = 0
+        for (_i2 in 1..repeat) {
+            for (i in positionlist) {
+                val a = setNotePosition(i)
+                controlhp(a)
+                refreshHP()
+                delay((cooltime[count] * 1000F).toLong())
+                count += 1
+            }
+        }
     }
 
     /**

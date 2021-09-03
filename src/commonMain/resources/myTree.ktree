@@ -1,7 +1,10 @@
 <ktree width="1920.0" height="1080.0" gridWidth="20" gridHeight="20">
-	<image name="logo" scaleX="0.46875" scaleY="0.46875" width="512.0" height="512.0" sourceFile="logo.png"/>
-	<text name="hp" x="231.04316796008868" scaleX="15.582039911308204" scaleY="13.356521739130434" autoScaling="true" text="hp" textSize="16.0" verticalAlign="TOP" horizontalAlign="LEFT"/>
+	<text name="hp" scaleX="15.582039911308204" scaleY="13.356521739130434" autoScaling="true" text="hp" textSize="16.0" verticalAlign="TOP" horizontalAlign="LEFT"/>
 	<solidrect name="notcorrect" colorMul="#65ff24ff" x="140.0" y="520.0" width="1020.0" height="60.0"/>
 	<solidrect name="correctline" colorMul="#fff02aff" x="1100.0" y="520.0" width="600.0" height="60.0"/>
 	<solidrect name="note" x="1360.0" y="520.0" width="80.0" height="60.0"/>
+	<image name="heart1" x="1660.0" y="460.0" width="200.0" height="200.0" sourceFile="heart1.png"/>
+	<image name="heart2" x="1660.0" y="460.0" width="200.0" height="200.0" sourceFile="heart2.png"/>
+	<image name="heart3" x="1660.0" y="420.0" width="200.0" height="200.0" sourceFile="heart3.png"/>
+	<image name="misile" x="-80.0" y="380.0" scaleX="1.6" scaleY="1.4" width="200.0" height="200.0" sourceFile="characters/misile.png"/>
 </ktree>
