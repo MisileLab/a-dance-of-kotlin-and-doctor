@@ -14,7 +14,7 @@ class Adokad {
     Main Game
      */
     suspend fun start() = Korge(width = 1920, height = 1080, bgcolor = Colors["#D3D3D3"], title = "a dance of kotlin and doctor", iconPath = "logo.png") {
-        val doctor: View = resourcesVfs["myTree.ktree"].readKTree(views)
+        val doctor: View = resourcesVfs["ktrees/rhythmdoctor/SamuraiTechno.ktree"].readKTree(views)
         val input = views.input
         doctor["heart1"].visible = true
         doctor["heart2"].visible = false
