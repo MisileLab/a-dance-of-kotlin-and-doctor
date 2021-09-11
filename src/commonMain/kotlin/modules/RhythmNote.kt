@@ -13,10 +13,10 @@ import kotlinx.coroutines.delay
  *Rhythm Note Class
  *@param view note object
  *@param input Input object cause keyboard input.
- *@param hp just default hp
+ *@param defaulthp just default hp
  */
-class RhythmNote(private val view: View, input: Input, private var hp: Double) {
-    private val defaulthp = hp
+class RhythmNote(private val view: View, input: Input, private var defaulthp: Double) {
+    private var hp = defaulthp
     private val note: QView = view["note"]
     private val keys = input.keys
 
