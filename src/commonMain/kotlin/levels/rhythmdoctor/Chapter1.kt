@@ -21,6 +21,7 @@ class Chapter1 {
         val beat2 = 0.15F
         val music = resourcesVfs["musics/rhythmdoctor/samurai techno.mp3"].readMusic()
         music.play()
+        addChild(doctor)
         delay(9900L)
         note.listnoteposition(list1, 2, beat1)
         note.listnoteposition(list2, 1, beat1)
