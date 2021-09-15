@@ -6,7 +6,6 @@ import com.soywiz.korge.input.Input
 import com.soywiz.korge.view.QView
 import com.soywiz.korge.view.View
 import com.soywiz.korge.view.get
-import com.soywiz.korge.view.setText
 import kotlinx.coroutines.delay
 
 /**
@@ -90,7 +89,6 @@ class RhythmNote(private val view: View, input: Input, private var defaulthp: Do
             for (i in positionlist) {
                 val a = setNotePosition(i)
                 controlhp(a)
-                refreshHP()
                 delay(cooltime2)
             }
     }
@@ -104,20 +102,11 @@ class RhythmNote(private val view: View, input: Input, private var defaulthp: Do
             for (i in positionlist) {
                 val a = setNotePosition(i)
                 controlhp(a)
-                refreshHP()
                 delay((cooltime[count] * 1000F).toLong())
                 count += 1
             }
         }
     }
-
-    /**
-     *refresh hp text
-     */
-    private fun refreshHP() {
-        view["hp"].setText(hp.toString())
-    }
-
     /**
      * control hp (plus or minus)
      * @param a noteposition

@@ -20,6 +20,7 @@ tasks.withType<Test> {
 }
 
 buildscript {
+    val korgeversion = "2.4.1"
     repositories {
         mavenLocal()
         mavenCentral()
@@ -29,8 +30,8 @@ buildscript {
         maven { url = uri("https://oss.jfrog.org/simple/libs-snapshot") }
     }
     dependencies {
-        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:2.4.1")
-        classpath("com.soywiz.korlibs.korau:korau:2.4.1")
+        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:$korgeversion")
+        classpath("com.soywiz.korlibs.korau:korau:$korgeversion")
         classpath("be.bluexin:drpc4k:0.9")
     }
 }
